@@ -1,0 +1,16 @@
+.saveItemContainer {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(226, 150, 43);
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.selected {
+  background-color: rgb(83, 83, 213);
+}
+
+.label {
+  font-weight: bold;
+}
