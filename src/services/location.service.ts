@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { ILocationResult } from "../interfaces/location-result.interface";
+import { DateUtilService } from "./date-utils.service";
 
 const LocationService = () => {
   const FETCH_URL = "http://api.open-notify.org/iss-now.json";
@@ -15,7 +16,7 @@ const LocationService = () => {
       timestamp: data.timestamp,
       longitude: data.iss_position.longitude,
       latitude: data.iss_position.latitude,
-      displayTime: new Date(data.timestamp).toISOString(),
+      displayTime: DateUtilService.format(data.timestamp),
     };
   };
 
