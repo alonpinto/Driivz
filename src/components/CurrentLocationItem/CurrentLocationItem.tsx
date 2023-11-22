@@ -1,3 +1,5 @@
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { Button } from "@mui/material";
 import { ILocationResult } from "../../interfaces/location-result.interface";
 import styles from "./CurrentLocationItem.module.scss";
 
@@ -26,18 +28,18 @@ const CurrentLocationItem = ({
       <div>Time: {currLocation.displayTime}</div>
 
       <div style={{ position: "fixed", right: 0, bottom: 0, padding: 20 }}>
-        <input
-          type="image"
-          width={50}
-          height={50}
-          style={{ cursor: "pointer" }}
-          src="https://static-00.iconduck.com/assets.00/plus-icon-2048x2048-z6v59bd6.png"
-          value={"ADD"}
-          disabled={isDisabled}
+        <Button
+          variant="contained"
+          startIcon={<AddCircleOutlineIcon />}
+          color="success"
+          size="large"
           onClick={() => {
             handleSaveCurrentLocation(currLocation);
           }}
-        />
+          disabled={isDisabled}
+        >
+          Add
+        </Button>
       </div>
     </div>
   ) : (
