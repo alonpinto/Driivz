@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ILocationResult } from "../../interfaces/location-result.interface";
 import styles from "./SaveLocationItem.module.scss";
 
@@ -17,11 +18,13 @@ const SaveLocationItem = ({
   handleRemoveSelectedLocation,
   isSelected,
 }: ISaveLocationItemProps) => {
+  const [isFadingOut, setIsFadingOut] = useState(false);
+
   return (
     <div
       className={`${styles.saveItemContainer} ${
         isSelected ? styles.selected : ""
-      }`}
+      } ${isFadingOut ? styles.fadeout : ""}`}
       onClick={() => handleSelectLocation(location)}
     >
       <div
@@ -32,9 +35,17 @@ const SaveLocationItem = ({
           margin: 4,
           fontSize: 20,
         }}
-        onClick={(event: React.MouseEvent<HTMLDivElement>) =>
-          handleRemoveSelectedLocation(event, location)
-        }
+        // onClick={(event: React.MouseEvent<HTMLDivElement>) =>
+        //   handleRemoveSelectedLocation(event, location)
+        // }
+
+        onClick={(event: React.MouseEvent<HTMLDivElement>) => {
+          setIsFadingOut(true);
+          event.stopPropagation(),
+            setTimeout(() => {
+              handleRemoveSelectedLocation(event, location);
+            }, 500);
+        }}
       >
         x
       </div>
