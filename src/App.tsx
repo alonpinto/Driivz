@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
-import { LocationContext } from "./context/LocationContext";
+import { LocationContext } from "./contexts/LocationContext";
 import { ILocationResult } from "./interfaces/location-result.interface";
-import { LocalStorageService } from "./services/localStorage.service";
+import { LocalStorageService } from "./services/local-storage.service";
 
 const SAVED_LOCATION_LOCAL_STORAGE_KEY = "saved_location";
 

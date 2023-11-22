@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { LocationContext } from "../context/LocationContext";
+import { LocationContext } from "../contexts/LocationContext";
 import { ILocationResult } from "../interfaces/location-result.interface";
 import { LocationService } from "../services/location.service";
 

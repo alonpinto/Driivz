@@ -1,5 +1,5 @@
 import { useContext, useDeferredValue, useState } from "react";
-import { LocationContext } from "../../context/LocationContext";
+import { LocationContext } from "../../contexts/LocationContext";
 import { ILocationResult } from "../../interfaces/location-result.interface";
 import SaveLocationItem from "../SaveLocationItem/SaveLocationItem";
 import styles from "./SaveList.module.scss";

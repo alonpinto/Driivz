@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LocationContext } from "../../context/LocationContext";
+import { LocationContext } from "../../contexts/LocationContext";
 import useFetchLocation from "../../hooks/useFetchLocation";
 import CurrentLocationItem from "../CurrentLocationItem/CurrentLocationItem";
 import StaticLocationItem from "../StaticLocationItem/StaticLocationItem";
