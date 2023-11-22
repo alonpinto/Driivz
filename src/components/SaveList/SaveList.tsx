@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useDeferredValue, useState } from "react";
 import { LocationContext } from "../../context/LocationContext";
 import { ILocationResult } from "../../interfaces/location-result.interface";
 import SaveLocationItem from "../SaveLocationItem/SaveLocationItem";
@@ -7,6 +7,8 @@ import styles from "./SaveList.module.scss";
 const SaveList = () => {
   const store = useContext(LocationContext);
   const [filterValue, setFilterValue] = useState<string>("");
+
+  const deferredFilterValue = useDeferredValue(filterValue);
 
   const handleSelectLocation = (location: ILocationResult) => {
     const isSelectedLocationClicked = store.selectedLocation?.id == location.id;
@@ -41,9 +43,9 @@ const SaveList = () => {
         ) : (
           store.savedLocations
             .filter((loc) => {
-              return !filterValue
+              return !deferredFilterValue
                 ? loc
-                : JSON.stringify(loc).includes(filterValue);
+                : JSON.stringify(loc).includes(deferredFilterValue);
             })
             .map((_location: ILocationResult) => (
               <SaveLocationItem
