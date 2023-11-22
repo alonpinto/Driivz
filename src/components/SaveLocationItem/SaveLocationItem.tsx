@@ -52,7 +52,7 @@ const SaveLocationItem = ({
 
       <div>
         <span className={styles.label}>Lat:</span>
-        {location.latitude},<span className={styles.label}>Lon:</span>{" "}
+        {location.latitude},<span className={styles.label}>Lon:</span>
         {location.longitude}
       </div>
 

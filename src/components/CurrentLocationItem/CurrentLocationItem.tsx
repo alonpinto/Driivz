@@ -21,13 +21,14 @@ const CurrentLocationItem = ({
       <h3>Current location:</h3>
 
       <div>
-        <span> Lat: {currLocation?.latitude}, </span>
-        <span>Lon: {currLocation?.longitude}</span>
+        <span> Lat:{currLocation?.latitude}</span>
+        <span>, </span>
+        <span>Lon:{currLocation?.longitude}</span>
       </div>
 
       <div>Time: {currLocation.displayTime}</div>
 
-      <div style={{ position: "fixed", right: 0, bottom: 0, padding: 20 }}>
+      <div className={styles.addButton}>
         <Button
           variant="contained"
           startIcon={<AddCircleOutlineIcon />}
