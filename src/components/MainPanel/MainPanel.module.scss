@@ -5,3 +5,14 @@
   align-items: center;
   display: flex;
 }
+
+@media only screen and (max-width: 800px) {
+  .mainPanel {
+    border-top: 2px solid black;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 10vh;
+  }
+}

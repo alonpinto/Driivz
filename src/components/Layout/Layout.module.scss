@@ -3,3 +3,12 @@
   height: 100vh;
   display: flex;
 }
+
+@media only screen and (max-width: 800px) {
+  .layout {
+    display: flex;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
